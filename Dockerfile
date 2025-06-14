@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:bookworm
 
 # build variables
 ARG SBCL_VERSION
@@ -11,6 +11,7 @@ RUN apt-get update -y && \
     apt-get install -y \
     # used to install sbcl and quicklisp
     build-essential \
+    libzstd-dev \
     curl \
     # used in downstream images (rpcq, quilc, qvm)
     cmake \
